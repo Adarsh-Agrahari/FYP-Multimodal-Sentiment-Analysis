@@ -1,0 +1,181 @@
+2024-12-30 16:30:39,900 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2024-12-30 16:30:40,530 - DEBUG - https://huggingface.co:443 "HEAD /bert-base-uncased/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2024-12-30 16:30:41,665 - CRITICAL - Error loading model: Can't get attribute 'MultimodalSentimentModel' on <module '__main__' from '/workspaces/FYP-Multimodal-Sentiment-Analysis/app.py'>
+Traceback (most recent call last):
+  File "/workspaces/FYP-Multimodal-Sentiment-Analysis/app.py", line 45, in <module>
+    model, device = load_model()
+                    ^^^^^^^^^^^^
+  File "/workspaces/FYP-Multimodal-Sentiment-Analysis/app.py", line 29, in load_model
+    model = pickle.load(f)
+            ^^^^^^^^^^^^^^
+AttributeError: Can't get attribute 'MultimodalSentimentModel' on <module '__main__' from '/workspaces/FYP-Multimodal-Sentiment-Analysis/app.py'>
+2024-12-30 16:30:41,673 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-12-30 16:30:41,673 - INFO - [33mPress CTRL+C to quit[0m
+2024-12-30 16:30:41,674 - INFO -  * Restarting with stat
+2024-12-30 16:30:51,651 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2024-12-30 16:30:51,870 - DEBUG - https://huggingface.co:443 "HEAD /bert-base-uncased/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2024-12-30 16:30:53,069 - CRITICAL - Error loading model: Can't get attribute 'MultimodalSentimentModel' on <module '__main__' from '/workspaces/FYP-Multimodal-Sentiment-Analysis/app.py'>
+Traceback (most recent call last):
+  File "/workspaces/FYP-Multimodal-Sentiment-Analysis/app.py", line 45, in <module>
+    model, device = load_model()
+                    ^^^^^^^^^^^^
+  File "/workspaces/FYP-Multimodal-Sentiment-Analysis/app.py", line 29, in load_model
+    model = pickle.load(f)
+            ^^^^^^^^^^^^^^
+AttributeError: Can't get attribute 'MultimodalSentimentModel' on <module '__main__' from '/workspaces/FYP-Multimodal-Sentiment-Analysis/app.py'>
+2024-12-30 16:30:53,076 - WARNING -  * Debugger is active!
+2024-12-30 16:30:53,747 - INFO -  * Debugger PIN: 124-462-571
+2024-12-30 16:30:55,980 - INFO - 127.0.0.1 - - [30/Dec/2024 16:30:55] "GET / HTTP/1.1" 200 -
+2024-12-30 16:31:09,282 - INFO - 127.0.0.1 - - [30/Dec/2024 16:31:09] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2024-12-30 16:35:40,231 - INFO -  * Detected change in '/workspaces/FYP-Multimodal-Sentiment-Analysis/app.py', reloading
+2024-12-30 16:35:41,931 - INFO -  * Restarting with stat
+2024-12-30 16:35:50,214 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2024-12-30 16:35:50,452 - DEBUG - https://huggingface.co:443 "HEAD /bert-base-uncased/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2024-12-30 16:35:54,891 - CRITICAL - Error loading model: Attempting to deserialize object on a CUDA device but torch.cuda.is_available() is False. If you are running on a CPU-only machine, please use torch.load with map_location=torch.device('cpu') to map your storages to the CPU.
+Traceback (most recent call last):
+  File "/workspaces/FYP-Multimodal-Sentiment-Analysis/app.py", line 65, in <module>
+    model, device = load_model()
+                    ^^^^^^^^^^^^
+  File "/workspaces/FYP-Multimodal-Sentiment-Analysis/app.py", line 49, in load_model
+    model = pickle.load(f)
+            ^^^^^^^^^^^^^^
+  File "/home/codespace/.local/lib/python3.12/site-packages/torch/storage.py", line 520, in _load_from_bytes
+    return torch.load(io.BytesIO(b), weights_only=False)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/codespace/.local/lib/python3.12/site-packages/torch/serialization.py", line 1384, in load
+    return _legacy_load(
+           ^^^^^^^^^^^^^
+  File "/home/codespace/.local/lib/python3.12/site-packages/torch/serialization.py", line 1638, in _legacy_load
+    result = unpickler.load()
+             ^^^^^^^^^^^^^^^^
+  File "/home/codespace/.local/lib/python3.12/site-packages/torch/serialization.py", line 1566, in persistent_load
+    obj = restore_location(obj, location)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/codespace/.local/lib/python3.12/site-packages/torch/serialization.py", line 601, in default_restore_location
+    result = fn(storage, location)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/codespace/.local/lib/python3.12/site-packages/torch/serialization.py", line 539, in _deserialize
+    device = _validate_device(location, backend_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/codespace/.local/lib/python3.12/site-packages/torch/serialization.py", line 508, in _validate_device
+    raise RuntimeError(
+RuntimeError: Attempting to deserialize object on a CUDA device but torch.cuda.is_available() is False. If you are running on a CPU-only machine, please use torch.load with map_location=torch.device('cpu') to map your storages to the CPU.
+2024-12-30 16:35:55,030 - WARNING -  * Debugger is active!
+2024-12-30 16:35:55,042 - INFO -  * Debugger PIN: 124-462-571
+2024-12-30 16:35:56,792 - INFO - 127.0.0.1 - - [30/Dec/2024 16:35:56] "GET / HTTP/1.1" 200 -
+2024-12-30 16:35:57,179 - INFO - 127.0.0.1 - - [30/Dec/2024 16:35:57] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2024-12-30 16:36:26,125 - ERROR - Model is not loaded. Request cannot be processed.
+2024-12-30 16:36:26,126 - INFO - 127.0.0.1 - - [30/Dec/2024 16:36:26] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -
+2024-12-30 16:38:29,400 - INFO -  * Detected change in '/workspaces/FYP-Multimodal-Sentiment-Analysis/app.py', reloading
+2024-12-30 16:38:31,515 - INFO -  * Restarting with stat
+2024-12-30 16:38:38,795 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2024-12-30 16:38:39,028 - DEBUG - https://huggingface.co:443 "HEAD /bert-base-uncased/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2024-12-30 16:38:40,304 - CRITICAL - Error loading model: 'map_location' is an invalid keyword argument for load()
+Traceback (most recent call last):
+  File "/workspaces/FYP-Multimodal-Sentiment-Analysis/app.py", line 65, in <module>
+    model, device = load_model()
+                    ^^^^^^^^^^^^
+  File "/workspaces/FYP-Multimodal-Sentiment-Analysis/app.py", line 49, in load_model
+    model = pickle.load(f, map_location=device)  # Map model to the current device (CPU/GPU)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'map_location' is an invalid keyword argument for load()
+2024-12-30 16:38:40,311 - WARNING -  * Debugger is active!
+2024-12-30 16:38:40,335 - INFO -  * Debugger PIN: 124-462-571
+2024-12-30 16:40:06,323 - INFO -  * Detected change in '/workspaces/FYP-Multimodal-Sentiment-Analysis/app.py', reloading
+2024-12-30 16:40:07,392 - INFO -  * Restarting with stat
+2024-12-30 16:40:13,394 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2024-12-30 16:40:13,645 - DEBUG - https://huggingface.co:443 "HEAD /bert-base-uncased/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2024-12-30 16:40:16,738 - CRITICAL - Error loading model: Attempting to deserialize object on a CUDA device but torch.cuda.is_available() is False. If you are running on a CPU-only machine, please use torch.load with map_location=torch.device('cpu') to map your storages to the CPU.
+Traceback (most recent call last):
+  File "/workspaces/FYP-Multimodal-Sentiment-Analysis/app.py", line 65, in <module>
+    model, device = load_model()
+                    ^^^^^^^^^^^^
+  File "/workspaces/FYP-Multimodal-Sentiment-Analysis/app.py", line 49, in load_model
+    model = torch.load(f, map_location=device)  # Load model with map_location to current device
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/codespace/.local/lib/python3.12/site-packages/torch/serialization.py", line 1384, in load
+    return _legacy_load(
+           ^^^^^^^^^^^^^
+  File "/home/codespace/.local/lib/python3.12/site-packages/torch/serialization.py", line 1628, in _legacy_load
+    magic_number = pickle_module.load(f, **pickle_load_args)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/codespace/.local/lib/python3.12/site-packages/torch/storage.py", line 520, in _load_from_bytes
+    return torch.load(io.BytesIO(b), weights_only=False)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/codespace/.local/lib/python3.12/site-packages/torch/serialization.py", line 1384, in load
+    return _legacy_load(
+           ^^^^^^^^^^^^^
+  File "/home/codespace/.local/lib/python3.12/site-packages/torch/serialization.py", line 1638, in _legacy_load
+    result = unpickler.load()
+             ^^^^^^^^^^^^^^^^
+  File "/home/codespace/.local/lib/python3.12/site-packages/torch/serialization.py", line 1566, in persistent_load
+    obj = restore_location(obj, location)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/codespace/.local/lib/python3.12/site-packages/torch/serialization.py", line 601, in default_restore_location
+    result = fn(storage, location)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/codespace/.local/lib/python3.12/site-packages/torch/serialization.py", line 539, in _deserialize
+    device = _validate_device(location, backend_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/codespace/.local/lib/python3.12/site-packages/torch/serialization.py", line 508, in _validate_device
+    raise RuntimeError(
+RuntimeError: Attempting to deserialize object on a CUDA device but torch.cuda.is_available() is False. If you are running on a CPU-only machine, please use torch.load with map_location=torch.device('cpu') to map your storages to the CPU.
+2024-12-30 16:40:16,821 - WARNING -  * Debugger is active!
+2024-12-30 16:40:16,831 - INFO -  * Debugger PIN: 124-462-571
+2024-12-30 16:41:20,521 - INFO -  * Detected change in '/workspaces/FYP-Multimodal-Sentiment-Analysis/app.py', reloading
+2024-12-30 16:41:21,829 - INFO -  * Restarting with stat
+2024-12-30 16:41:27,739 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2024-12-30 16:41:28,340 - DEBUG - https://huggingface.co:443 "HEAD /bert-base-uncased/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2024-12-30 16:41:32,071 - CRITICAL - Error loading model: Attempting to deserialize object on a CUDA device but torch.cuda.is_available() is False. If you are running on a CPU-only machine, please use torch.load with map_location=torch.device('cpu') to map your storages to the CPU.
+Traceback (most recent call last):
+  File "/workspaces/FYP-Multimodal-Sentiment-Analysis/app.py", line 65, in <module>
+    model, device = load_model()
+                    ^^^^^^^^^^^^
+  File "/workspaces/FYP-Multimodal-Sentiment-Analysis/app.py", line 49, in load_model
+    model = torch.load(f, map_location=torch.device('cpu'))  # Explicitly load on CPU
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/codespace/.local/lib/python3.12/site-packages/torch/serialization.py", line 1384, in load
+    return _legacy_load(
+           ^^^^^^^^^^^^^
+  File "/home/codespace/.local/lib/python3.12/site-packages/torch/serialization.py", line 1628, in _legacy_load
+    magic_number = pickle_module.load(f, **pickle_load_args)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/codespace/.local/lib/python3.12/site-packages/torch/storage.py", line 520, in _load_from_bytes
+    return torch.load(io.BytesIO(b), weights_only=False)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/codespace/.local/lib/python3.12/site-packages/torch/serialization.py", line 1384, in load
+    return _legacy_load(
+           ^^^^^^^^^^^^^
+  File "/home/codespace/.local/lib/python3.12/site-packages/torch/serialization.py", line 1638, in _legacy_load
+    result = unpickler.load()
+             ^^^^^^^^^^^^^^^^
+  File "/home/codespace/.local/lib/python3.12/site-packages/torch/serialization.py", line 1566, in persistent_load
+    obj = restore_location(obj, location)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/codespace/.local/lib/python3.12/site-packages/torch/serialization.py", line 601, in default_restore_location
+    result = fn(storage, location)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/codespace/.local/lib/python3.12/site-packages/torch/serialization.py", line 539, in _deserialize
+    device = _validate_device(location, backend_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/codespace/.local/lib/python3.12/site-packages/torch/serialization.py", line 508, in _validate_device
+    raise RuntimeError(
+RuntimeError: Attempting to deserialize object on a CUDA device but torch.cuda.is_available() is False. If you are running on a CPU-only machine, please use torch.load with map_location=torch.device('cpu') to map your storages to the CPU.
+2024-12-30 16:41:32,108 - WARNING -  * Debugger is active!
+2024-12-30 16:41:32,113 - INFO -  * Debugger PIN: 124-462-571
+2024-12-30 16:42:26,762 - INFO -  * Detected change in '/workspaces/FYP-Multimodal-Sentiment-Analysis/app.py', reloading
+2024-12-30 16:42:27,425 - INFO -  * Restarting with stat
+2024-12-30 16:42:36,685 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2024-12-30 16:42:37,293 - DEBUG - https://huggingface.co:443 "HEAD /bert-base-uncased/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2024-12-30 16:42:38,576 - CRITICAL - Error loading model: Can't get attribute 'MultimodalSentimentModel' on <module '__main__' from '/workspaces/FYP-Multimodal-Sentiment-Analysis/app.py'>
+Traceback (most recent call last):
+  File "/workspaces/FYP-Multimodal-Sentiment-Analysis/app.py", line 45, in <module>
+    model, device = load_model()
+                    ^^^^^^^^^^^^
+  File "/workspaces/FYP-Multimodal-Sentiment-Analysis/app.py", line 29, in load_model
+    model = pickle.load(f)
+            ^^^^^^^^^^^^^^
+AttributeError: Can't get attribute 'MultimodalSentimentModel' on <module '__main__' from '/workspaces/FYP-Multimodal-Sentiment-Analysis/app.py'>
+2024-12-30 16:42:38,583 - WARNING -  * Debugger is active!
+2024-12-30 16:42:38,711 - INFO -  * Debugger PIN: 124-462-571
