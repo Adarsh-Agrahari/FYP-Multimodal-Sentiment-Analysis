@@ -1,23 +1,74 @@
-# app.py
+import logging
 from flask import Flask, render_template, request, jsonify
 import torch
 from PIL import Image
 from transformers import BertTokenizer
 import torchvision.transforms as transforms
+import torchvision
+import transformers
 import pickle
-import io
 import os
+import torch.nn as nn
+import traceback
+# Initialize logging
+logging.basicConfig(filename='app.log', level=logging.DEBUG, 
+                    format='%(asctime)s - %(levelname)s - %(message)s')
+
+class MultimodalSentimentModel(nn.Module):
+    def __init__(self, bert_model, resnet_model, num_classes):
+        super(MultimodalSentimentModel, self).__init__()
+        self.text_model = bert_model
+        self.image_model = resnet_model
+        self.text_output_size = 768
+        self.image_output_size = 2048
+        self.fc1 = nn.Linear(self.text_output_size + self.image_output_size, 512)
+        self.fc2 = nn.Linear(512, num_classes)
+        self.dropout = nn.Dropout(0.5)
+
+    def forward(self, input_ids, attention_mask, image):
+        text_output = self.text_model(input_ids=input_ids, attention_mask=attention_mask)[1]
+        image_output = self.image_model(image)
+        combined = torch.cat((text_output, image_output), dim=1)
+        x = self.fc1(combined)
+        x = self.dropout(x)
+        x = self.fc2(x)
+        return x
 
 app = Flask(__name__)
-
-# Load the pickled model
 def load_model():
-    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    with open('multimodal_sentiment_model.pkl', 'rb') as f:
-        model = pickle.load(f)
-    model.to(device)
-    model.eval()
-    return model, device
+    device = torch.device("cpu")
+    try:
+        # Load the checkpoint
+        checkpoint = torch.load('model.pkl', map_location=torch.device("cpu"))
+        
+        # Check for required keys
+        if 'model_state_dict' not in checkpoint:
+            raise KeyError("'model_state_dict' is missing in the checkpoint.")
+        if 'bert_model' not in checkpoint:
+            raise KeyError("'bert_model' is missing in the checkpoint.")
+        if 'num_classes' not in checkpoint:
+            raise KeyError("'num_classes' is missing in the checkpoint.")
+        
+        # Load models
+        bert_model = transformers.AutoModel.from_pretrained(checkpoint['bert_model'])
+        resnet_model = torchvision.models.resnet50(pretrained=True)
+        resnet_model.fc = nn.Identity()  # Modify ResNet to output raw features
+        
+        # Initialize the multimodal model
+        model = MultimodalSentimentModel(bert_model, resnet_model, checkpoint['num_classes'])
+        
+        # Load weights
+        model.load_state_dict(checkpoint['model_state_dict'])
+        model.to(device)
+        model.eval()
+        
+        logging.info("Model loaded successfully.")
+        return model, device
+
+    except Exception as e:
+        logging.error(f"Error loading model: {str(e)}")
+        logging.error("Error details:\n" + traceback.format_exc())
+        return None, None
 
 # Initialize tokenizer and transforms
 tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
@@ -32,19 +83,24 @@ transform = transforms.Compose([
 try:
     model, device = load_model()
 except Exception as e:
-    print(f"Error loading model: {str(e)}")
+    logging.error(f"Error initializing model: {str(e)}")
     model, device = None, None
 
 @app.route('/')
 def home():
+    logging.info("Home route accessed.")
     return render_template('index.html')
 
 @app.route('/predict', methods=['POST'])
 def predict():
     if model is None:
+        error_message = "Model not loaded properly."
+        logging.error(f"{error_message} Exception details: {error_message}")
+        # Log the full exception traceback for more details
+        logging.error("Error details:\n" + traceback.format_exc())
         return jsonify({
             'success': False,
-            'error': 'Model not loaded properly'
+            'error': error_message
         })
     
     try:
@@ -75,6 +131,8 @@ def predict():
         sentiment = sentiments[predicted_class]
         probs = probabilities[0].cpu().numpy().tolist()
         
+        logging.info(f"Prediction made: {sentiment}, probabilities: {probs}")
+        
         return jsonify({
             'success': True,
             'sentiment': sentiment,
@@ -86,6 +144,7 @@ def predict():
         })
         
     except Exception as e:
+        logging.error(f"Error during prediction: {str(e)}")
         return jsonify({
             'success': False,
             'error': str(e)

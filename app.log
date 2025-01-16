@@ -1,0 +1,67 @@
+2025-01-16 19:33:56,283 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-01-16 19:33:56,505 - DEBUG - https://huggingface.co:443 "HEAD /bert-base-uncased/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2025-01-16 19:33:56,507 - DEBUG - Attempting to acquire lock 133361899706112 on /home/codespace/.cache/huggingface/hub/.locks/models--bert-base-uncased/e5c73d8a50df1f56fb5b0b8002d7cf4010afdccb.lock
+2025-01-16 19:33:56,507 - DEBUG - Lock 133361899706112 acquired on /home/codespace/.cache/huggingface/hub/.locks/models--bert-base-uncased/e5c73d8a50df1f56fb5b0b8002d7cf4010afdccb.lock
+2025-01-16 19:33:57,169 - DEBUG - https://huggingface.co:443 "GET /bert-base-uncased/resolve/main/tokenizer_config.json HTTP/1.1" 200 48
+2025-01-16 19:33:57,186 - DEBUG - Attempting to release lock 133361899706112 on /home/codespace/.cache/huggingface/hub/.locks/models--bert-base-uncased/e5c73d8a50df1f56fb5b0b8002d7cf4010afdccb.lock
+2025-01-16 19:33:57,187 - DEBUG - Lock 133361899706112 released on /home/codespace/.cache/huggingface/hub/.locks/models--bert-base-uncased/e5c73d8a50df1f56fb5b0b8002d7cf4010afdccb.lock
+2025-01-16 19:33:57,401 - DEBUG - https://huggingface.co:443 "HEAD /bert-base-uncased/resolve/main/vocab.txt HTTP/1.1" 200 0
+2025-01-16 19:33:57,402 - DEBUG - Attempting to acquire lock 133361899036384 on /home/codespace/.cache/huggingface/hub/.locks/models--bert-base-uncased/fb140275c155a9c7c5a3b3e0e77a9e839594a938.lock
+2025-01-16 19:33:57,402 - DEBUG - Lock 133361899036384 acquired on /home/codespace/.cache/huggingface/hub/.locks/models--bert-base-uncased/fb140275c155a9c7c5a3b3e0e77a9e839594a938.lock
+2025-01-16 19:33:57,613 - DEBUG - https://huggingface.co:443 "GET /bert-base-uncased/resolve/main/vocab.txt HTTP/1.1" 200 231508
+2025-01-16 19:33:57,980 - DEBUG - Attempting to release lock 133361899036384 on /home/codespace/.cache/huggingface/hub/.locks/models--bert-base-uncased/fb140275c155a9c7c5a3b3e0e77a9e839594a938.lock
+2025-01-16 19:33:57,980 - DEBUG - Lock 133361899036384 released on /home/codespace/.cache/huggingface/hub/.locks/models--bert-base-uncased/fb140275c155a9c7c5a3b3e0e77a9e839594a938.lock
+2025-01-16 19:33:58,188 - DEBUG - https://huggingface.co:443 "HEAD /bert-base-uncased/resolve/main/added_tokens.json HTTP/1.1" 404 0
+2025-01-16 19:33:58,394 - DEBUG - https://huggingface.co:443 "HEAD /bert-base-uncased/resolve/main/special_tokens_map.json HTTP/1.1" 404 0
+2025-01-16 19:33:58,632 - DEBUG - https://huggingface.co:443 "HEAD /bert-base-uncased/resolve/main/tokenizer.json HTTP/1.1" 200 0
+2025-01-16 19:33:58,633 - DEBUG - Attempting to acquire lock 133361900554672 on /home/codespace/.cache/huggingface/hub/.locks/models--bert-base-uncased/949a6f013d67eb8a5b4b5b46026217b888021b88.lock
+2025-01-16 19:33:58,633 - DEBUG - Lock 133361900554672 acquired on /home/codespace/.cache/huggingface/hub/.locks/models--bert-base-uncased/949a6f013d67eb8a5b4b5b46026217b888021b88.lock
+2025-01-16 19:33:58,850 - DEBUG - https://huggingface.co:443 "GET /bert-base-uncased/resolve/main/tokenizer.json HTTP/1.1" 200 466062
+2025-01-16 19:33:59,039 - DEBUG - Attempting to release lock 133361900554672 on /home/codespace/.cache/huggingface/hub/.locks/models--bert-base-uncased/949a6f013d67eb8a5b4b5b46026217b888021b88.lock
+2025-01-16 19:33:59,039 - DEBUG - Lock 133361900554672 released on /home/codespace/.cache/huggingface/hub/.locks/models--bert-base-uncased/949a6f013d67eb8a5b4b5b46026217b888021b88.lock
+2025-01-16 19:33:59,273 - DEBUG - https://huggingface.co:443 "HEAD /bert-base-uncased/resolve/main/chat_template.jinja HTTP/1.1" 404 0
+2025-01-16 19:33:59,586 - DEBUG - https://huggingface.co:443 "HEAD /bert-base-uncased/resolve/main/config.json HTTP/1.1" 200 0
+2025-01-16 19:33:59,593 - DEBUG - Attempting to acquire lock 133361898141312 on /home/codespace/.cache/huggingface/hub/.locks/models--bert-base-uncased/45a2321a7ecfdaaf60a6c1fd7f5463994cc8907d.lock
+2025-01-16 19:33:59,594 - DEBUG - Lock 133361898141312 acquired on /home/codespace/.cache/huggingface/hub/.locks/models--bert-base-uncased/45a2321a7ecfdaaf60a6c1fd7f5463994cc8907d.lock
+2025-01-16 19:33:59,799 - DEBUG - https://huggingface.co:443 "GET /bert-base-uncased/resolve/main/config.json HTTP/1.1" 200 570
+2025-01-16 19:33:59,801 - DEBUG - Attempting to release lock 133361898141312 on /home/codespace/.cache/huggingface/hub/.locks/models--bert-base-uncased/45a2321a7ecfdaaf60a6c1fd7f5463994cc8907d.lock
+2025-01-16 19:33:59,801 - DEBUG - Lock 133361898141312 released on /home/codespace/.cache/huggingface/hub/.locks/models--bert-base-uncased/45a2321a7ecfdaaf60a6c1fd7f5463994cc8907d.lock
+2025-01-16 19:34:10,173 - DEBUG - https://huggingface.co:443 "HEAD /bert-base-uncased/resolve/main/config.json HTTP/1.1" 200 0
+2025-01-16 19:34:11,032 - DEBUG - https://huggingface.co:443 "HEAD /bert-base-uncased/resolve/main/model.safetensors HTTP/1.1" 302 0
+2025-01-16 19:34:11,033 - DEBUG - Attempting to acquire lock 133361596148160 on /home/codespace/.cache/huggingface/hub/.locks/models--bert-base-uncased/68d45e234eb4a928074dfd868cead0219ab85354cc53d20e772753c6bb9169d3.lock
+2025-01-16 19:34:11,034 - DEBUG - Lock 133361596148160 acquired on /home/codespace/.cache/huggingface/hub/.locks/models--bert-base-uncased/68d45e234eb4a928074dfd868cead0219ab85354cc53d20e772753c6bb9169d3.lock
+2025-01-16 19:34:11,036 - DEBUG - Starting new HTTPS connection (1): cdn-lfs.hf.co:443
+2025-01-16 19:34:11,110 - DEBUG - https://cdn-lfs.hf.co:443 "GET /bert-base-uncased/68d45e234eb4a928074dfd868cead0219ab85354cc53d20e772753c6bb9169d3?response-content-disposition=inline%3B+filename*%3DUTF-8%27%27model.safetensors%3B+filename%3D%22model.safetensors%22%3B&Expires=1737314859&Policy=eyJTdGF0ZW1lbnQiOlt7IkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTczNzMxNDg1OX19LCJSZXNvdXJjZSI6Imh0dHBzOi8vY2RuLWxmcy5oZi5jby9iZXJ0LWJhc2UtdW5jYXNlZC82OGQ0NWUyMzRlYjRhOTI4MDc0ZGZkODY4Y2VhZDAyMTlhYjg1MzU0Y2M1M2QyMGU3NzI3NTNjNmJiOTE2OWQzP3Jlc3BvbnNlLWNvbnRlbnQtZGlzcG9zaXRpb249KiJ9XX0_&Signature=BZqo~XRCvZoYDwIVf3lSpBjFEqsJes-OL1nKKxDV0sseTM3E4wFQBL12SnfFQg7LOF0dHPVYuSX-4cqONS-39Km8oVDv0TcOLaUFPwHmfvBhc0utkp4SCY8gnZ4ukPjiPDifooe8mDtxKcgwHdMAv8jbBfRMMzBV-47yZwoqPkOL1mndlRH0jB8ttYVdbSqrCTN7BkzUO-ibiDfjrVhpPg-QDZhN0c-GbjvOwHy~iyH6H4FLQXaxwN2pbeXH806-K4E9JTfLIY8Ya-Gqff2cJnGaFYX7FH1fR86KYKjLeHhXy7T2t9l2EvSr9pJK3By9FZzADbTHEF2byavOsni4Gg__&Key-Pair-Id=K3RPWS32NSSJCE HTTP/1.1" 200 440449768
+2025-01-16 19:34:22,833 - DEBUG - Attempting to release lock 133361596148160 on /home/codespace/.cache/huggingface/hub/.locks/models--bert-base-uncased/68d45e234eb4a928074dfd868cead0219ab85354cc53d20e772753c6bb9169d3.lock
+2025-01-16 19:34:22,985 - DEBUG - Lock 133361596148160 released on /home/codespace/.cache/huggingface/hub/.locks/models--bert-base-uncased/68d45e234eb4a928074dfd868cead0219ab85354cc53d20e772753c6bb9169d3.lock
+2025-01-16 19:34:40,483 - INFO - Model loaded successfully.
+2025-01-16 19:34:40,596 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-16 19:34:40,597 - INFO - [33mPress CTRL+C to quit[0m
+2025-01-16 19:34:40,599 - INFO -  * Restarting with stat
+2025-01-16 19:35:19,428 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-01-16 19:35:19,706 - DEBUG - https://huggingface.co:443 "HEAD /bert-base-uncased/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2025-01-16 19:35:49,350 - DEBUG - https://huggingface.co:443 "HEAD /bert-base-uncased/resolve/main/config.json HTTP/1.1" 200 0
+2025-01-16 19:36:22,844 - INFO - Model loaded successfully.
+2025-01-16 19:36:22,944 - WARNING -  * Debugger is active!
+2025-01-16 19:36:22,992 - INFO -  * Debugger PIN: 999-466-857
+2025-01-16 19:43:12,588 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-01-16 19:43:12,918 - DEBUG - https://huggingface.co:443 "HEAD /bert-base-uncased/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2025-01-16 19:43:19,256 - DEBUG - https://huggingface.co:443 "HEAD /bert-base-uncased/resolve/main/config.json HTTP/1.1" 200 0
+2025-01-16 19:43:32,085 - INFO - Model loaded successfully.
+2025-01-16 19:43:32,162 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-16 19:43:32,162 - INFO - [33mPress CTRL+C to quit[0m
+2025-01-16 19:43:32,164 - INFO -  * Restarting with stat
+2025-01-16 19:43:51,968 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-01-16 19:43:52,199 - DEBUG - https://huggingface.co:443 "HEAD /bert-base-uncased/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2025-01-16 19:43:58,351 - DEBUG - https://huggingface.co:443 "HEAD /bert-base-uncased/resolve/main/config.json HTTP/1.1" 200 0
+2025-01-16 19:43:59,815 - INFO - Model loaded successfully.
+2025-01-16 19:43:59,869 - WARNING -  * Debugger is active!
+2025-01-16 19:43:59,919 - INFO -  * Debugger PIN: 844-835-866
+2025-01-16 19:44:00,284 - INFO - Home route accessed.
+2025-01-16 19:44:00,315 - INFO - 127.0.0.1 - - [16/Jan/2025 19:44:00] "GET / HTTP/1.1" 200 -
+2025-01-16 19:44:00,796 - INFO - 127.0.0.1 - - [16/Jan/2025 19:44:00] "GET /static/js/main.js HTTP/1.1" 200 -
+2025-01-16 19:44:01,117 - INFO - 127.0.0.1 - - [16/Jan/2025 19:44:01] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-01-16 19:44:27,436 - INFO - Prediction made: Negative, probabilities: [0.951842725276947, 0.0007811769610270858, 0.04737606272101402]
+2025-01-16 19:44:27,441 - INFO - 127.0.0.1 - - [16/Jan/2025 19:44:27] "POST /predict HTTP/1.1" 200 -
