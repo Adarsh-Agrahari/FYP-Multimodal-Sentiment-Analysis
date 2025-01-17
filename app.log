@@ -65,3 +65,86 @@
 2025-01-16 19:44:01,117 - INFO - 127.0.0.1 - - [16/Jan/2025 19:44:01] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
 2025-01-16 19:44:27,436 - INFO - Prediction made: Negative, probabilities: [0.951842725276947, 0.0007811769610270858, 0.04737606272101402]
 2025-01-16 19:44:27,441 - INFO - 127.0.0.1 - - [16/Jan/2025 19:44:27] "POST /predict HTTP/1.1" 200 -
+2025-01-17 07:33:34,344 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-01-17 07:33:34,591 - DEBUG - https://huggingface.co:443 "HEAD /bert-base-uncased/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2025-01-17 07:33:35,462 - ERROR - Error loading model: [Errno 2] No such file or directory: 'model.pkl'
+2025-01-17 07:33:35,463 - ERROR - Error details:
+Traceback (most recent call last):
+  File "/workspaces/FYP-Multimodal-Sentiment-Analysis/app.py", line 42, in load_model
+    checkpoint = torch.load('model.pkl', map_location=torch.device("cpu"))
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/FYP-Multimodal-Sentiment-Analysis/.venv/lib/python3.12/site-packages/torch/serialization.py", line 1319, in load
+    with _open_file_like(f, "rb") as opened_file:
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/FYP-Multimodal-Sentiment-Analysis/.venv/lib/python3.12/site-packages/torch/serialization.py", line 659, in _open_file_like
+    return _open_file(name_or_buffer, mode)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/FYP-Multimodal-Sentiment-Analysis/.venv/lib/python3.12/site-packages/torch/serialization.py", line 640, in __init__
+    super().__init__(open(name, mode))
+                     ^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'model.pkl'
+
+2025-01-17 07:33:35,472 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-17 07:33:35,472 - INFO - [33mPress CTRL+C to quit[0m
+2025-01-17 07:33:35,473 - INFO -  * Restarting with stat
+2025-01-17 07:33:38,808 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-01-17 07:33:39,028 - DEBUG - https://huggingface.co:443 "HEAD /bert-base-uncased/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2025-01-17 07:33:39,734 - ERROR - Error loading model: [Errno 2] No such file or directory: 'model.pkl'
+2025-01-17 07:33:39,735 - ERROR - Error details:
+Traceback (most recent call last):
+  File "/workspaces/FYP-Multimodal-Sentiment-Analysis/app.py", line 42, in load_model
+    checkpoint = torch.load('model.pkl', map_location=torch.device("cpu"))
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/FYP-Multimodal-Sentiment-Analysis/.venv/lib/python3.12/site-packages/torch/serialization.py", line 1319, in load
+    with _open_file_like(f, "rb") as opened_file:
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/FYP-Multimodal-Sentiment-Analysis/.venv/lib/python3.12/site-packages/torch/serialization.py", line 659, in _open_file_like
+    return _open_file(name_or_buffer, mode)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/FYP-Multimodal-Sentiment-Analysis/.venv/lib/python3.12/site-packages/torch/serialization.py", line 640, in __init__
+    super().__init__(open(name, mode))
+                     ^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'model.pkl'
+
+2025-01-17 07:33:39,740 - WARNING -  * Debugger is active!
+2025-01-17 07:33:39,742 - INFO -  * Debugger PIN: 538-047-329
+2025-01-17 07:33:40,187 - INFO - Home route accessed.
+2025-01-17 07:33:40,192 - INFO - 127.0.0.1 - - [17/Jan/2025 07:33:40] "GET / HTTP/1.1" 200 -
+2025-01-17 07:33:40,521 - INFO - 127.0.0.1 - - [17/Jan/2025 07:33:40] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-01-17 07:43:53,845 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-01-17 07:43:54,313 - DEBUG - https://huggingface.co:443 "HEAD /bert-base-uncased/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2025-01-17 07:43:56,834 - DEBUG - https://huggingface.co:443 "HEAD /bert-base-uncased/resolve/main/config.json HTTP/1.1" 200 0
+2025-01-17 07:43:57,456 - DEBUG - https://huggingface.co:443 "HEAD /bert-base-uncased/resolve/main/model.safetensors HTTP/1.1" 302 0
+2025-01-17 07:43:57,458 - DEBUG - Attempting to acquire lock 137512037786944 on /home/codespace/.cache/huggingface/hub/.locks/models--bert-base-uncased/68d45e234eb4a928074dfd868cead0219ab85354cc53d20e772753c6bb9169d3.lock
+2025-01-17 07:43:57,460 - DEBUG - Lock 137512037786944 acquired on /home/codespace/.cache/huggingface/hub/.locks/models--bert-base-uncased/68d45e234eb4a928074dfd868cead0219ab85354cc53d20e772753c6bb9169d3.lock
+2025-01-17 07:43:57,461 - DEBUG - Starting new HTTPS connection (1): cdn-lfs.hf.co:443
+2025-01-17 07:43:57,515 - DEBUG - https://cdn-lfs.hf.co:443 "GET /bert-base-uncased/68d45e234eb4a928074dfd868cead0219ab85354cc53d20e772753c6bb9169d3?response-content-disposition=inline%3B+filename*%3DUTF-8%27%27model.safetensors%3B+filename%3D%22model.safetensors%22%3B&Expires=1737359037&Policy=eyJTdGF0ZW1lbnQiOlt7IkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTczNzM1OTAzN319LCJSZXNvdXJjZSI6Imh0dHBzOi8vY2RuLWxmcy5oZi5jby9iZXJ0LWJhc2UtdW5jYXNlZC82OGQ0NWUyMzRlYjRhOTI4MDc0ZGZkODY4Y2VhZDAyMTlhYjg1MzU0Y2M1M2QyMGU3NzI3NTNjNmJiOTE2OWQzP3Jlc3BvbnNlLWNvbnRlbnQtZGlzcG9zaXRpb249KiJ9XX0_&Signature=oZgDVyCDW1SFeEIBIKga6XdXobmk7lbEU4Vf4IVhaULjPMJM5308oRKSJfV4yfQYGfXK02rwS9yNTTSy9wAEfFAKNa1AcmZJ9Chv0vxaAxB0OwTsikDGw6pCoC17Jiy4sfVMyNsr9B5wAXcHynjEIr-DiaVynXaMSDfZwvkM4ePsTYpK6hi-Dryyz68bI4WaCJjrU8PHoabe86sUYHkqtw0CNqLBWryPoW6WOKYI~WwKQLfEPfSd-EdlNHk4a4W7jlO9Dr1Wml01BX16N5wdTR6uHsMydcUrl1eDyXfZwYRLleZwVQU29bffy0BDWfHPQYFWSPD3d2F5dPYG4X12Ww__&Key-Pair-Id=K3RPWS32NSSJCE HTTP/1.1" 200 440449768
+2025-01-17 07:43:59,397 - DEBUG - Attempting to release lock 137512037786944 on /home/codespace/.cache/huggingface/hub/.locks/models--bert-base-uncased/68d45e234eb4a928074dfd868cead0219ab85354cc53d20e772753c6bb9169d3.lock
+2025-01-17 07:43:59,397 - DEBUG - Lock 137512037786944 released on /home/codespace/.cache/huggingface/hub/.locks/models--bert-base-uncased/68d45e234eb4a928074dfd868cead0219ab85354cc53d20e772753c6bb9169d3.lock
+2025-01-17 07:44:02,876 - INFO - Model loaded successfully.
+2025-01-17 07:44:03,448 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-17 07:44:03,448 - INFO - [33mPress CTRL+C to quit[0m
+2025-01-17 07:44:03,821 - INFO -  * Restarting with stat
+2025-01-17 07:44:10,655 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-01-17 07:44:11,057 - DEBUG - https://huggingface.co:443 "HEAD /bert-base-uncased/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2025-01-17 07:44:16,411 - DEBUG - https://huggingface.co:443 "HEAD /bert-base-uncased/resolve/main/config.json HTTP/1.1" 200 0
+2025-01-17 07:44:17,869 - INFO - Model loaded successfully.
+2025-01-17 07:44:17,922 - WARNING -  * Debugger is active!
+2025-01-17 07:44:17,936 - INFO -  * Debugger PIN: 538-047-329
+2025-01-17 07:46:25,347 - INFO - Home route accessed.
+2025-01-17 07:46:25,353 - INFO - 127.0.0.1 - - [17/Jan/2025 07:46:25] "GET / HTTP/1.1" 200 -
+2025-01-17 07:46:38,816 - INFO - Prediction made: Positive, probabilities: [5.682639994120109e-07, 1.0562484931142535e-05, 0.9999889135360718]
+2025-01-17 07:46:38,816 - INFO - 127.0.0.1 - - [17/Jan/2025 07:46:38] "POST /predict HTTP/1.1" 200 -
+2025-01-17 07:46:57,817 - INFO - Prediction made: Positive, probabilities: [0.0003990506229456514, 4.385286956676282e-05, 0.9995570778846741]
+2025-01-17 07:46:57,818 - INFO - 127.0.0.1 - - [17/Jan/2025 07:46:57] "POST /predict HTTP/1.1" 200 -
+2025-01-17 07:47:15,531 - INFO - Prediction made: Positive, probabilities: [0.4644082486629486, 0.003550390712916851, 0.5320413708686829]
+2025-01-17 07:47:15,532 - INFO - 127.0.0.1 - - [17/Jan/2025 07:47:15] "POST /predict HTTP/1.1" 200 -
+2025-01-17 07:47:34,114 - INFO - Home route accessed.
+2025-01-17 07:47:34,115 - INFO - 127.0.0.1 - - [17/Jan/2025 07:47:34] "GET / HTTP/1.1" 200 -
+2025-01-17 07:47:34,289 - INFO - 127.0.0.1 - - [17/Jan/2025 07:47:34] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-01-17 07:48:12,954 - INFO - Prediction made: Positive, probabilities: [5.794822754978668e-07, 9.865776519291103e-06, 0.9999895095825195]
+2025-01-17 07:48:12,955 - INFO - 127.0.0.1 - - [17/Jan/2025 07:48:12] "POST /predict HTTP/1.1" 200 -
+2025-01-17 07:48:28,568 - INFO - Prediction made: Positive, probabilities: [0.4644082486629486, 0.003550390712916851, 0.5320413708686829]
+2025-01-17 07:48:28,569 - INFO - 127.0.0.1 - - [17/Jan/2025 07:48:28] "POST /predict HTTP/1.1" 200 -
