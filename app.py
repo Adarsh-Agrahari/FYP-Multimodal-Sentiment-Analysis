@@ -38,26 +38,27 @@ app = Flask(__name__)
 def load_model():
     device = torch.device("cpu")
     try:
-        # Load the checkpoint
-        checkpoint = torch.load('model.pkl', map_location=torch.device("cpu"))
+        # Attempt to load the checkpoint
+        checkpoint = torch.load('model.pkl', map_location=device)
         
-        # Check for required keys
-        if 'model_state_dict' not in checkpoint:
-            raise KeyError("'model_state_dict' is missing in the checkpoint.")
-        if 'bert_model' not in checkpoint:
-            raise KeyError("'bert_model' is missing in the checkpoint.")
-        if 'num_classes' not in checkpoint:
-            raise KeyError("'num_classes' is missing in the checkpoint.")
+        # Log checkpoint keys for debugging
+        logging.info(f"Checkpoint keys: {checkpoint.keys()}")
         
-        # Load models
+        # Ensure required keys are present
+        required_keys = ['model_state_dict', 'bert_model', 'num_classes']
+        for key in required_keys:
+            if key not in checkpoint:
+                raise KeyError(f"Key '{key}' is missing in the checkpoint.")
+        
+        # Initialize models
         bert_model = transformers.AutoModel.from_pretrained(checkpoint['bert_model'])
         resnet_model = torchvision.models.resnet50(pretrained=True)
         resnet_model.fc = nn.Identity()  # Modify ResNet to output raw features
         
-        # Initialize the multimodal model
+        # Create multimodal model
         model = MultimodalSentimentModel(bert_model, resnet_model, checkpoint['num_classes'])
         
-        # Load weights
+        # Load state dict
         model.load_state_dict(checkpoint['model_state_dict'])
         model.to(device)
         model.eval()
@@ -67,7 +68,7 @@ def load_model():
 
     except Exception as e:
         logging.error(f"Error loading model: {str(e)}")
-        logging.error("Error details:\n" + traceback.format_exc())
+        logging.error("Traceback:\n" + traceback.format_exc())
         return None, None
 
 # Initialize tokenizer and transforms
